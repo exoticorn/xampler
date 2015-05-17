@@ -22,6 +22,9 @@ class Sample {
             this._context.onStateChanged();
         }, this);
     }
+    get buffer() {
+        return this._buffer;
+    }
 }
 
 function defaultSamples(context) {

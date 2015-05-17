@@ -27,6 +27,7 @@ export default class Recorder {
             this._context.onStateChanged();
             async.go(function*() {
                 sample.data = yield recording.stop();
+                sample.name = 'Recording ' + new Date().toLocaleTimeString();
                 stream.getAudioTracks()[0].stop();
                 this.recording = undefined;
             }, this);
