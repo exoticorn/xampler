@@ -1,0 +1,7 @@
+.sample:hover {
+    background-color: #eee;
+}
+
+.sample:focus {
+    background-color: #88c;
+}

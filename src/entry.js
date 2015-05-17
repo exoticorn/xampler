@@ -1,13 +1,15 @@
 import React from 'react';
 import VorbisRecorder from './vorbisrecorder';
-import SampleList from './samplelist';
 import async from './async';
-import getUserMedia from './getusermedia';
+import MainComponent from './maincomponent';
 
 async.go(function*() {
-    let recorder = yield new VorbisRecorder();
-    let audio = new AudioContext();
-    React.render(<SampleList samples={['foo', 'barango']} />,
+    let context = {
+        recorder: yield new VorbisRecorder(),
+        audio: new AudioContext()
+    };
+    
+    React.render(<MainComponent context={context}/>,
         document.getElementById('container'));
 
     /*
